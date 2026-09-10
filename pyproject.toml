@@ -1,0 +1,108 @@
+[project]
+name = "TPUS"
+version = "0.1.0"
+requires-python = ">=3.10"
+description = "Research code for joint multi-dataset 3D medical image segmentation"
+readme = "README.md"
+license = { file = "LICENSE" }
+maintainers = [
+    { name = "YonghengSun1997", email = "55743572+YonghengSun1997@users.noreply.github.com" },
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Scientific/Engineering :: Medical Science Apps.",
+]
+keywords = [
+    "deep learning",
+    "medical image segmentation",
+    "multi-dataset learning",
+    "nnU-Net",
+]
+dependencies = [
+    "torch>=2.1.2",
+    "acvl-utils>=0.2,<0.3",
+    "dynamic-network-architectures>=0.3.1,<0.4",
+    "tqdm",
+    "dicom2nifti",
+    "scipy",
+    "batchgenerators>=0.25",
+    "numpy>=1.24",
+    "scikit-learn",
+    "scikit-image>=0.19.3",
+    "SimpleITK>=2.2.1",
+    "pandas",
+    "graphviz",
+    "tifffile",
+    "requests",
+    "nibabel",
+    "matplotlib",
+    "seaborn",
+    "imagecodecs",
+    "yacs",
+    "medpy",
+    "batchgeneratorsv2>=0.2",
+    "einops",
+    "blosc2>=3.0.0b1",
+    "timm",
+]
+
+[project.urls]
+Homepage = "https://github.com/YonghengSun1997/TPUS"
+Repository = "https://github.com/YonghengSun1997/TPUS"
+"Upstream MultiTalent" = "https://github.com/MIC-DKFZ/MultiTalent/tree/public_MT"
+
+[project.scripts]
+multitalent_plan_and_preprocess = "multitalent.experiment_planning.plan_and_preprocess_entrypoints:plan_and_preprocess_entry"
+multitalent_extract_fingerprint = "multitalent.experiment_planning.plan_and_preprocess_entrypoints:extract_fingerprint_entry"
+multitalent_plan_experiment = "multitalent.experiment_planning.plan_and_preprocess_entrypoints:plan_experiment_entry"
+multitalent_preprocess = "multitalent.experiment_planning.plan_and_preprocess_entrypoints:preprocess_entry"
+multitalent_train = "multitalent.run.run_training_MT:run_training_entry"
+multitalent_predict_from_modelfolder = "multitalent.utilities.MultiTalent.predict_from_raw_data_multitalent:predict_entry_point_modelfolder"
+nnUNetv2_train = "multitalent.run.run_training_MT:run_training_entry"
+nnUNetv2_predict_from_modelfolder = "multitalent.inference.predict_from_raw_data:predict_entry_point_modelfolder"
+nnUNetv2_predict = "multitalent.inference.predict_from_raw_data:predict_entry_point"
+multitalent_convert_old_nnUNet_dataset = "multitalent.dataset_conversion.convert_raw_dataset_from_old_nnunet_format:convert_entry_point"
+multitalent_find_best_configuration = "multitalent.evaluation.find_best_configuration:find_best_configuration_entry_point"
+multitalent_determine_postprocessing = "multitalent.postprocessing.remove_connected_components:entry_point_determine_postprocessing_folder"
+multitalent_apply_postprocessing = "multitalent.postprocessing.remove_connected_components:entry_point_apply_postprocessing"
+multitalent_ensemble = "multitalent.ensembling.ensemble:entry_point_ensemble_folders"
+multitalent_accumulate_crossval_results = "multitalent.evaluation.find_best_configuration:accumulate_crossval_results_entry_point"
+multitalent_plot_overlay_pngs = "multitalent.utilities.overlay_plots:entry_point_generate_overlay"
+multitalent_download_pretrained_model_by_url = "multitalent.model_sharing.entry_points:download_by_url"
+multitalent_install_pretrained_model_from_zip = "multitalent.model_sharing.entry_points:install_from_zip_entry_point"
+multitalent_export_model_to_zip = "multitalent.model_sharing.entry_points:export_pretrained_model_entry"
+multitalent_move_plans_between_datasets = "multitalent.experiment_planning.plans_for_pretraining.move_plans_between_datasets:entry_point_move_plans_between_datasets"
+multitalent_evaluate_folder = "multitalent.evaluation.evaluate_predictions:evaluate_folder_entry_point"
+multitalent_evaluate_simple = "multitalent.evaluation.evaluate_predictions:evaluate_simple_entry_point"
+multitalent_convert_MSD_dataset = "multitalent.dataset_conversion.convert_MSD_dataset:entry_point"
+prepare_MT_training = "multitalent.utilities.MultiTalent.create_MT_trainingsjson:prepare_MT_training"
+tpus_prepare = "multitalent.utilities.MultiTalent.create_MT_trainingsjson:prepare_MT_training"
+tpus_train = "multitalent.run.run_training_MT:run_training_entry"
+tpus_predict = "multitalent.utilities.MultiTalent.predict_from_raw_data_multitalent:predict_entry_point_modelfolder"
+tpus_evaluate = "multitalent.evaluation.evaluate_predictions:evaluate_folder_entry_point"
+
+[project.optional-dependencies]
+clip = [
+    "clip @ git+https://github.com/openai/CLIP.git@d05afc436d78f1c48dc0dbf8e5980a9d471f35f6",
+]
+dev = [
+    "build",
+    "pytest",
+]
+
+[build-system]
+requires = ["setuptools>=67.8.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["multitalent*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.codespell]
+skip = ".git,*.pdf,*.svg"

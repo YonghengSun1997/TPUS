@@ -1,0 +1,61 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+*.egg-info/
+.pytest_cache/
+.coverage
+htmlcov/
+build/
+dist/
+.venv/
+venv/
+
+# Editors and operating systems
+.idea/
+.vscode/
+.DS_Store
+*~
+*.swp
+
+# Credentials and local configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+.netrc
+
+# Data, models, and experiment outputs
+nnUNet_raw/
+nnUNet_preprocessed/
+nnUNet_results/
+data/
+datasets/
+checkpoints/
+predictions/
+outputs/
+runs/
+wandb/
+lightning_logs/
+*.pth
+*.pt
+*.ckpt
+*.model
+*.npz
+*.npy
+*.nii
+*.nii.gz
+*.dcm
+
+# Scheduler and runtime artifacts
+slurm-*.out
+*.out
+*.err
+logs/
+debug_runtime/
+
+# Private audit material is intentionally outside the public repository.
+analysis/provenance/private/

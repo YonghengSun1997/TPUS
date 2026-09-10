@@ -1,0 +1,23 @@
+# Versions observed in the release validation environment on 2026-09-10.
+# The observed torch build was 2.6.0+cu124; install the build appropriate for your platform.
+torch==2.6.0
+acvl-utils==0.2.6
+dynamic-network-architectures==0.3.1
+batchgenerators==0.25.3
+batchgeneratorsv2==0.3.4
+numpy==2.4.6
+scipy==1.17.1
+SimpleITK==2.5.5
+nibabel==5.4.2
+scikit-image==0.26.0
+scikit-learn==1.9.0
+pandas==3.0.3
+matplotlib==3.11.0
+medpy==0.5.2
+timm==1.0.28
+einops==0.8.2
+blosc2==4.8.1
+graphviz==0.21
+yacs==0.1.8
+dicom2nifti==2.6.2
+imagecodecs==2026.3.6
