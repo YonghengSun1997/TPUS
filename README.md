@@ -251,7 +251,7 @@ Citation metadata for TPUS is intentionally omitted until verified publication i
 
 ## Acknowledgements
 
-Please cite the original projects and papers appropriate to the components and datasets you use:
+We highly appreciate these original work and open-source contribution:
 
 - [MultiTalent](https://github.com/MIC-DKFZ/MultiTalent/tree/public_MT)
 - [nnU-Net](https://github.com/MIC-DKFZ/nnUNet)
@@ -259,5 +259,3 @@ Please cite the original projects and papers appropriate to the components and d
 - [Vision GNN](https://github.com/huawei-noah/Efficient-AI-Backbones/tree/master/vig_pytorch)
 - [OpenAI CLIP](https://github.com/openai/CLIP)
 - [CLIP-Driven Universal Model](https://github.com/ljwztc/CLIP-Driven-Universal-Model)
-
-The links above identify upstream projects; they do not imply endorsement of TPUS.
